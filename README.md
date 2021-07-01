@@ -5,7 +5,7 @@ Desafio: criar API para cadastro de jogos, com boas práticas de código.
 - Added a parameter on the get that paginates, which allows to choose the column to order the list
 
 
-### Script to use SQL Server dabatase
+### Script to create the required database and table in SQL Server
 
 ```
 create database Games; 
