@@ -1,6 +1,6 @@
 # ApiGamesCatalog
 ## DIO GTF START 2 .NET Bootcamp
-
+Desafio: criar API para cadastro de jogos, com boas práticas de código.
 ### Improvements over base project
 - Added a parameter on the get that paginates, which allows to choose the column to order the list
 
