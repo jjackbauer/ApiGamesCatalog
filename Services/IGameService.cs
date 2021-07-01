@@ -8,7 +8,7 @@ namespace ApiGamesCatalog.Services
 {
     public interface IGameService : IDisposable
     {
-        Task<List<GameViewModel>> Get(int page, int quantity);
+        Task<List<GameViewModel>> Get(int page, int quantity, string orderby);
         Task<GameViewModel> Get(Guid id);
         Task<GameViewModel> Insert(GameInputModel game);
         Task Update(Guid id, GameInputModel game);

@@ -29,10 +29,10 @@ namespace ApiGamesCatalog.Repositories
             sqlConnection?.Dispose();
         }
 
-        public async Task<List<Game>> Get(int page, int quantity)
+        public async Task<List<Game>> Get(int page, int quantity, string orderby)
         {
             var games = new List<Game>();
-            var command = $"select * from games order by Name offset {((page - 1) * quantity)} rows fetch next {quantity} rows only";
+            var command = $"select * from games order by {orderby} offset {((page - 1) * quantity)} rows fetch next {quantity} rows only";
 
             await sqlConnection.OpenAsync();
             SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);

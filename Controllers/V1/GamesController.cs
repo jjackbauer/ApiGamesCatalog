@@ -22,15 +22,16 @@ namespace ApiGamesCatalog.Controllers.V1
             _gameService = gameService;
         }
         /// <summary>
-        /// Get all games registered in the system, ordered by name and selected by pages
+        /// Get all games registered in the system, in list ordered by one of the collumns 
         /// </summary>
         /// <param name="page">Indicate the current page. Minimum is 1</param>
         /// <param name="quantity">Indicate the quantity of itens by page. Minimum is 1 item e Maximum is 50 itens</param>
+        /// <param name="orderBy">Selects the element that is used to sort the list. Must be Id, Name, Producer or Price </param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GameViewModel>>> Get([FromQuery, Range(1, int.MaxValue)] int page = 1, [FromQuery, Range(1, 50)] int quantity = 5)
+        public async Task<ActionResult<IEnumerable<GameViewModel>>> Get([FromQuery, Range(1, int.MaxValue)] int page = 1, [FromQuery, Range(1, 50)] int quantity = 5, [FromQuery,RegularExpression(@"^(?:Id|Name|Producer|Price)$", ErrorMessage = "You must order by Id, Name, Producer or Price.")] string orderBy = "Name")
         {
-            var games = await _gameService.Get(page, quantity);
+            var games = await _gameService.Get(page, quantity, orderBy);
 
             if (games.Count() == 0)
                 return NoContent();

@@ -7,7 +7,7 @@ namespace ApiGamesCatalog.Repositories
 {
     public interface IGameRepository : IDisposable
     {
-        Task<List<Game>> Get(int page, int quantity);
+        Task<List<Game>> Get(int page, int quantity, string orderby);
         Task<Game> Get(Guid id);
         Task<List<Game>> Get(string name, string producer);
         Task Insert(Game game);

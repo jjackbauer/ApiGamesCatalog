@@ -4,12 +4,13 @@
         <name>ApiGamesCatalog</name>
     </assembly>
     <members>
-        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Get(System.Int32,System.Int32)">
+        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Get(System.Int32,System.Int32,System.String)">
             <summary>
-            Get all games registered in the system, ordered by name and selected by pages
+            Get all games registered in the system, in list ordered by one of the collumns 
             </summary>
             <param name="page">Indicate the current page. Minimum is 1</param>
             <param name="quantity">Indicate the quantity of itens by page. Minimum is 1 item e Maximum is 50 itens</param>
+            <param name="orderBy">Selects the element that is used to sort the list. Must be Id, Name, Producer or Price </param>
             <returns></returns>
         </member>
         <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Get(System.Guid)">

@@ -1,6 +1,10 @@
 # ApiGamesCatalog
 ## DIO GTF START 2 .NET Bootcamp
 
+### Improvements over base project
+- Added a parameter on the get that paginates, which allows to choose the column to order the list
+
+
 ### Script to use SQL Server dabatase
 
 ```

@@ -29,9 +29,9 @@ namespace ApiGamesCatalog.Services
             await _gameRepository.Delete(id);
         }
 
-        public async Task<List<GameViewModel>> Get(int page, int quantity)
+        public async Task<List<GameViewModel>> Get(int page, int quantity, string orderby)
         {
-            var games = await _gameRepository.Get(page, quantity);
+            var games = await _gameRepository.Get(page, quantity,orderby);
 
 
             return games.Select(game => new GameViewModel
