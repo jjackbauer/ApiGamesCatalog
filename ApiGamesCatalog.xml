@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiGamesCatalog</name>
+    </assembly>
+    <members>
+        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Get(System.Int32,System.Int32)">
+            <summary>
+            Get all games registered in the system, ordered by name and selected by pages
+            </summary>
+            <param name="page">Indicate the current page. Minimum is 1</param>
+            <param name="quantity">Indicate the quantity of itens by page. Minimum is 1 item e Maximum is 50 itens</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Get(System.Guid)">
+            <summary>
+            Get a game registered in the system
+            </summary>
+            <param name="gameId">Unique Id of a game registred in the system</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Insert(ApiGamesCatalog.InputModel.GameInputModel)">
+            <summary>
+            Register a game in the system
+            </summary>
+            <param name="gameInput">Game object to be registered</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Update(System.Guid,ApiGamesCatalog.InputModel.GameInputModel)">
+            <summary>
+            Update the informations about a game registered in the system
+            </summary>
+            <param name="gameId">Unique Id of a game registered in the system</param>
+            <param name="gameInput">Game object with updates wanted</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Update(System.Guid,System.Double)">
+            <summary>
+            Update the price of a game registered in the system
+            </summary>
+            <param name="gameId">Unique Id of a game registered in the system</param>
+            <param name="price">New Price of this game, Mininum is 0 and Maximum is 1000</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiGamesCatalog.Controllers.V1.GamesController.Delete(System.Guid)">
+            <summary>
+            Remove a registered game of the system
+            </summary>
+            <param name="gameId">Unique Id of a game registered in the system</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
